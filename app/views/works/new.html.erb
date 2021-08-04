@@ -1,1 +1,83 @@
-<h1>Hola desde works</h1>
+<section class="text-gray-600 body-font">
+    <div class="container px-5 py-10 mx-auto bg-green-200 bg-opacity-25">
+        <div class="bg-gradient-to-t from-red-300 to-red-500 rounded-2xl text-white p-8 text-center h-72 max-w-sm md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto">
+            <h1 class="text-3xl mb-3">Bienvenido</h1>
+            <p class="text-sm md:text-lg">
+                Este formulario esta diseñado con el fin de poder ayudarte con el tramite de tu certificado laboral,
+                el cual llenaras segun tu requerimiento. Cualquier informacion por favor llamar a la extencion 211.
+            </p>
+        </div>
+        <div class="bg-white py-8 px-10 text-center rounded-md shadow-lg transform -translate-y-20 sm:-translate-y-24 max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-5xl mx-auto">
+            <h2 class="font-semibold text-2xl mb-6 text-red-500">Formulario Certificado Laboral</h2>        
+                        <div class="bg-white shadow rounded-lg p-6 m-2">
+                            <%= form_for :work do |f| %>
+                                <div class="grid lg:grid-cols-3 gap-6 font-bold">
+                                    <div class="border focus-within:border-red-500 focus-within:text-gray-500 transition-all duration-500 relative rounded p-1">
+                                        <div class="-mt-4 absolute tracking-wider px-1 uppercase text-xs">
+                                            <p>
+                                                <%= f.label :Nombres, class: "bg-white text-red-500 px-1" %><br>
+                                            </p>
+                                        </div>
+                                        <p>    
+                                            <%= f.text_field :Nombres, placeholder: "Fernando Manuel", class: "py-1 px-1 text-gray-900 outline-none block h-full w-full placeholder-gray-500 placeholder-opacity-25 italic text-base md:text-xl" %>
+                                        </p>
+                                    </div>
+
+                                    <div class="border focus-within:border-red-500 focus-within:text-gray-500 transition-all duration-500 relative rounded p-1">
+                                        <div class="-mt-4 absolute tracking-wider px-1 uppercase text-xs">
+                                            <p>
+                                                <%= f.label :Apellidos, class: "bg-white text-red-500 px-1" %><br>
+                                            </p>
+                                        </div>
+                                        <p>    
+                                            <%= f.text_field :Apellidos, placeholder: "Soto Anaya",class: "py-1 px-1 text-gray-900 outline-none block h-full w-full placeholder-gray-500 placeholder-opacity-25 italic text-base md:text-xl" %>
+                                        </p>
+                                    </div>
+
+                                    <div class="border focus-within:border-red-500 focus-within:text-gray-500 transition-all duration-500 relative rounded p-1">
+                                        <div class="-mt-4 absolute tracking-wider px-1 uppercase text-xs">
+                                            <p>
+                                                <%= f.label :Cedula, class: "bg-white text-red-500 px-1" %><br>
+                                            </p>
+                                        </div>
+                                        <p>    
+                                            <%= f.text_field :Cedula, placeholder: "109876541",class: "py-1 px-1 text-gray-900 outline-none block h-full w-full placeholder-gray-500 placeholder-opacity-25 italic text-base md:text-xl" %>
+                                        </p>
+                                    </div>
+
+                                    <div class="border focus-within:border-red-500 focus-within:text-gray-500 transition-all duration-500 relative rounded p-1">
+                                        <div class="-mt-4 absolute tracking-wider px-1 uppercase text-xs">
+                                            <p>
+                                                <%= f.label :Email, class: "bg-white text-red-500 px-1" %><br>
+                                            </p>
+                                        </div>
+                                        <p>    
+                                            <%= f.email_field :Email, placeholder: "micorreo@email.com", class: "py-1 px-1 text-gray-900 outline-none block h-full w-full placeholder-gray-500 placeholder-opacity-25 italic text-base md:text-xl" %>
+                                        </p>
+                                    </div>
+
+                                    <div class="border focus-within:border-red-500 focus-within:text-gray-500 transition-all duration-500 relative rounded p-1">
+                                        <div class="-mt-4 absolute tracking-wider px-1 uppercase text-xs">
+                                            <p>
+                                                <%= f.label :Email, class: "bg-white text-red-500 px-1" %><br>
+                                            </p>
+                                        </div>
+                                        <p>    
+                                            <%= f.check_box :Email, class: "" %>
+                                            
+                                        </p>
+                                    </div>
+
+                                </div>
+                                <div class="border-t mt-6 pt-3">    
+                                    <p>
+                                        <%= f.submit "Enviar peticion", class:"rounded text-gray-100 px-3 py-1 bg-red-500 hover:shadow-inner hover:bg-red-700 transition-all duration-300" %>
+                                    </p>
+                                </div>
+                            <% end %>
+                        </div>    
+                    </div>
+        </div>            
+    </div>  
+</section>
+
