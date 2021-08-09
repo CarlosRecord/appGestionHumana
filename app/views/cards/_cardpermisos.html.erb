@@ -18,10 +18,10 @@
                 <h4 class="hidden md:block text-xl text-gray-400">Tramitar</h4>
                 <h3 class="hidden md:block font-bold text-2xl text-gray-700">PERMISOS LABORALES</h3>
                 <p class="text-gray-600 text-justify"> Este espacio es donde podras tramitar tu carta laboral, podras especificar como la necesitas y generarla.</p>
-                <a class="flex items-baseline mt-3 text-red-600 hover:text-red-900 focus:text-red-900" href="">
-                    <span>Conocer más de permisos laborales</span>
+                <%= link_to(permissions_new_url, class: "flex items-baseline mt-3 text-red-600 hover:text-red-900 focus:text-red-900") do %>
+                    <span>Solicitar certificado laboral</span>
                     <span class="text-xs ml-1">&#x279c;</span>
-                </a>
+                <% end %>
             </div>
         </div>
 

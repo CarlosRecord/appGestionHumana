@@ -21,10 +21,10 @@
                     En hora buena, ahora puedes reportar las horas extras de tu equipo de trabajo solo en un click, 
                     solo debes realizar seleccionar el botón de solicitud y completar la información requerida.
                 </p>
-                <a class="flex items-baseline mt-3 text-red-600 hover:text-red-900 focus:text-red-900" href="">
-                    <span>Reportar horas extras</span>
+                <%= link_to(times_new_url, class: "flex items-baseline mt-3 text-red-600 hover:text-red-900 focus:text-red-900") do %>
+                    <span>Solicitar certificado laboral</span>
                     <span class="text-xs ml-1">&#x279c;</span>
-                </a>
+                <% end %>
             </div>
         </div>
 
