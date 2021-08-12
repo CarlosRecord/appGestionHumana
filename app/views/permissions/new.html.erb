@@ -88,48 +88,83 @@
 
                             <div class="border-t pt-1"></div>
 
-                            <h2 class="text-left font-semibold text-sm md:text-lg mt-4 text-red-500">A quién va dirigida la referencia</h2>
+                            <h2 class="text-left font-semibold text-sm md:text-lg mt-4 text-red-500">Diligencie las fechas de su permiso</h2>
 
                             <div class="border-t pt-1"></div>
 
-                            <h2 class="text-left italic font-normal text-sm text-gray-400">Teniendo en cuenta su necesidad, seleccione las especificaciones con las cuales requiere su certificación.</h2>
+                            <h2 class="text-left italic font-normal text-sm text-gray-400">Teniendo en cuanta su necesidad, seleccione las fechas de su permiso. Tanto la fecha incial como la fecha final.</h2>
 
                             <div class="grid lg:grid-cols-2 gap-6">
-                                <%= select_tag(:city_id, options_for_select([['Sin titulo', 1], ['Señor.', 2], ['Señora.', 3], ['Señores.', 4]]), class: "filter drop-shadow-lg shadow-inner rounded text-red-400 cursor-pointer border border-gray-300 h-15 pl-5 pr-10 hover:border-gray-400 focus:outline-none") %>
-                                <div class="border-2 focus-within:border-red-500 focus-within:text-gray-500 transition-all duration-500 relative rounded p-1">
-                                    <div class="-mt-4 absolute tracking-wider px-1 uppercase text-xs">
-                                        <p>
-                                            <%= f.label :Titulo, class: "bg-white text-red-400 px-1" %>
-                                        </p>
-                                    </div>
-                                    <p>    
-                                        <%= f.text_field :Titulo, placeholder: "A quien pueda interesar", class: "py-1 px-1 text-gray-900 outline-none block h-full w-full placeholder-gray-500 placeholder-opacity-25 italic text-base md:text-xl" %>
-                                    </p>
-                                </div>
+                                <%= f.label :FechaInicio, class: "bg-white text-red-400 px-1" %>
+                                <%= f.datetime_field :fechaInicio, class: "filter drop-shadow-lg shadow-inner rounded text-red-400 cursor-pointer border border-gray-300 h-15 pl-5 pr-10 hover:border-gray-400 focus:outline-none" %>
+                                <%= f.label :FechaFinal, class: "bg-white text-red-400 px-1" %>
+                                <%= f.datetime_field :fechaFinal, class: "filter drop-shadow-lg shadow-inner rounded text-red-400 cursor-pointer border border-gray-300 h-15 pl-5 pr-10 hover:border-gray-400 focus:outline-none" %>
                             </div>
 
                             <div class="border-t mt-6 pt-3"></div>
-                            <h2 class="italic text-sm md:text-lg mb-6 text-gray-400">Teniendo en cuenta su necesidad, seleccione las especificaciones con las cuales requiere su certificación.</h2>    
+                            <h2 class="text-left italic font-normal text-sm text-gray-400">Teniendo en cuenta su necesidad, por favor escriba su propuesta para reponer el tiempo.</h2>    
                             
-                            
-                                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-red-400">
-                                    <div class="flex justify-center">
-                                        <%= f.label :TipoContrato, class: "mr-4" %>
-                                        <%= f.check_box :TipoContrato, class: "w-7 h-7" %>
-                                    </div>
-                                    <div class="flex justify-center">
-                                        <%= f.label :Salario, class: "mr-4" %>
-                                        <%= f.check_box :Salario, class: "w-7 h-7" %>
-                                    </div>
-                                    <div class="flex justify-center">
-                                        <%= f.label :Funciones, class: "mr-4" %>
-                                        <%= f.check_box :Funciones, class: "w-7 h-7" %>
-                                    </div>
-                                    <div class="flex justify-center">
-                                        <%= f.label :TiempoLaboral, class: "mr-4" %>
-                                        <%= f.check_box :TiempoLaboral, class: "w-7 h-7" %>
-                                    </div>
+                            <div class="border-2 focus-within:border-red-500 focus-within:text-gray-500 transition-all duration-500 relative rounded p-1">
+                                <div class="-mt-4 absolute tracking-wider px-1 uppercase text-xs">
+                                    <p>
+                                        <%= f.label :PropuestaHoroas, class: "bg-white text-red-400 px-1" %>
+                                    </p>
                                 </div>
+                                <p>    
+                                    <%= f.text_area :PropuestaHoroas, placeholder: "Descripcion de propuesta para reponer el tiempo...", class: "py-1 px-1 text-gray-900 outline-none block h-full w-full placeholder-gray-500 placeholder-opacity-25 italic text-base md:text-xl" %>
+                                </p>
+                            </div>
+
+                            <div class="border-t pt-1"></div>
+
+                            <h2 class="text-left font-semibold text-sm md:text-lg mt-4 text-red-500">Diligencie tipo de permiso.</h2>
+
+                            <div class="border-t pt-1"></div>
+
+                            <h2 class="text-left italic font-normal text-sm text-gray-400">Teniendo en cuenta su necesidad, seleccione las especificaciones con las cuales requiere su permiso.</h2>
+
+                            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-red-400">
+                                <div class="flex justify-center">
+                                    <%= f.label :planificado, class: "mr-4" %>
+                                    <%= f.check_box :planificado, class: "w-7 h-7" %>
+                                </div>
+                                <div class="flex justify-center">
+                                    <%= f.label :Extraordinario, class: "mr-4" %>
+                                    <%= f.check_box :Extraordinario, class: "w-7 h-7" %>
+                                </div>
+                                <div class="flex justify-center">
+                                    <%= f.label :PorLAEmpresa, class: "mr-4" %>
+                                    <%= f.check_box :PorLAEmpresa, class: "w-7 h-7" %>
+                                </div>
+                            </div>
+
+                            <div class="border-t pt-1"></div>
+
+                            <h2 class="text-left font-semibold text-sm md:text-lg mt-4 text-red-500">Diligencie motivo de permiso.</h2>
+
+                            <div class="border-t pt-1"></div>
+
+                            <h2 class="text-left italic font-normal text-sm text-gray-400">Teniendo en cuenta su necesidad, seleccione las especificaciones con las cuales requiere su permiso.</h2>
+
+                            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-red-400">
+                                <div class="flex justify-center">
+                                    <%= f.label :CitaMedica, class: "mr-4" %>
+                                    <%= f.check_box :CitaMedica, class: "w-7 h-7" %>
+                                </div>
+                                <div class="flex justify-center">
+                                    <%= f.label :Personal, class: "mr-4" %>
+                                    <%= f.check_box :Personal, class: "w-7 h-7" %>
+                                </div>
+                                <div class="flex justify-center">
+                                    <%= f.label :Familiar, class: "mr-4" %>
+                                    <%= f.check_box :Familiar, class: "w-7 h-7" %>
+                                </div>
+                                <div class="flex justify-center">
+                                    <%= f.label :DiaFamilia, class: "mr-4" %>
+                                    <%= f.check_box :DiaFamilia, class: "w-7 h-7" %>
+                                </div>
+                            </div>
+
                         </div>
 
                         <div class="border-t mt-6 pt-3">
