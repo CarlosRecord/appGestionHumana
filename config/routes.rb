@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   get 'vacation/new'
   get '/works/new'
   
-  get 'type-vacation', to: 'type_vacations#index'
+  resources :type_vacations
 end
