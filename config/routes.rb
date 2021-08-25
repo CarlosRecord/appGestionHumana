@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'times/new'
   get 'vacation/new'
   get '/works/new'
-  
+
   resources :type_vacations
   resources :type_requests
 end
