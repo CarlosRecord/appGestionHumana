@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get '/works/new'
   
   resources :type_vacations
+  resources :type_requests
 end
