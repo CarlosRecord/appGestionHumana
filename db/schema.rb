@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_17_191548) do
+ActiveRecord::Schema.define(version: 2021_08_25_134052) do
+
+  create_table "type_requests", charset: "utf8mb4", force: :cascade do |t|
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "type_vacations", charset: "utf8mb4", force: :cascade do |t|
     t.string "description"
