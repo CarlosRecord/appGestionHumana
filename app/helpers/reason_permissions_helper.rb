@@ -1,0 +1,2 @@
+module ReasonPermissionsHelper
+end
