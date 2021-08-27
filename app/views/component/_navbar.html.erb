@@ -1,0 +1,62 @@
+<header class="text-gray-600 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-red-500 rounded-full" viewBox="0 0 24 24" >
+        <path d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+      </svg>
+      <span class="ml-3 text-xl">Gestion Humana App</span>
+    </a>
+    <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+      <div class="dropdown inline-block relative">
+        <button class="bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center">
+          <span>Menu</span>
+        </button>
+        <ul class="dropdown-content absolute hidden text-gray-700 pt-1">
+
+          <li class="dropdown">
+            <%= link_to "Vacaciones", type_vacations_path, class: "bg-gray-200 hover:bg-gray-400 py-2 px-5 block whitespace-no-wrap" %>
+            <ul class="dropdown-content absolute hidden text-gray-700 pl-6 ml-24 -mt-10">
+              <li class="dropdown">
+                <%= link_to "Solicitudes", type_vacations_path, class: "bg-gray-200 hover:bg-gray-400 py-2 px-5 block whitespace-no-wrap" %>
+                <ul class="dropdown-content absolute hidden text-gray-700 pl-6 ml-24 -mt-10">
+                  <li><%= link_to "Ver", type_vacations_path, class: "bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" %></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <%= link_to "Acciones", type_vacations_path, class: "bg-gray-200 hover:bg-gray-400 py-2 px-5 block whitespace-no-wrap" %>
+                <ul class="dropdown-content absolute hidden text-gray-700 pl-6 ml-24 -mt-10">
+                  <li><%= link_to "Listado", type_vacations_path, class: "bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" %></li>
+                  <li><%= link_to "agregar", new_type_vacation_path, class: "bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" %></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <%= link_to "Permisos", type_requests_path, class: "bg-gray-200 hover:bg-gray-400 py-2 px-5 block whitespace-no-wrap" %>
+              <ul class="dropdown-content absolute hidden text-gray-700 pl-5 ml-24 -mt-10">
+                <li><%= link_to "Listado", type_requests_path, class: "bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" %></li>
+                <li><%= link_to "agregar", new_type_request_path, class: "bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" %></li>
+              </ul>
+
+          </li>
+
+          <li class="dropdown">
+            <%= link_to "Permisos", type_requests_path, class: "bg-gray-200 hover:bg-gray-400 py-2 px-5 block whitespace-no-wrap" %>
+              <ul class="dropdown-content absolute hidden text-gray-700 pl-5 ml-24 -mt-10">
+                <li><%= link_to "Listado", type_requests_path, class: "bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" %></li>
+                <li><%= link_to "agregar", new_type_request_path, class: "bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" %></li>
+              </ul>
+          </li>
+
+          <li><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Option 4</a></li>
+        </ul>
+      </div>
+    </nav>
+    <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
+      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7"></path>
+      </svg>
+    </button>
+  </div>
+</header>
