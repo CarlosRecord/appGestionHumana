@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :type_requests
   resources :reason_permissions
   resources :type_permissions
+  resources :directed_certificates
 end
