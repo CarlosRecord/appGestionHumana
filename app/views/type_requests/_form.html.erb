@@ -5,7 +5,7 @@
             <h1 class="title-font font-medium text-3xl text-gray-900"><%= title %></h1>
             <p class="leading-relaxed mt-4"><%= paragraph %></p>
         </div>
-        
+
         <div class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 shadow rounded-lg">
             <h2 class="text-gray-900 text-lg font-medium title-font mb-5"><%= title %></h2>
 
@@ -13,12 +13,11 @@
                 <%= form_with model: @typeRequest do |tr| %>
                     <%= tr.label :description, class: "leading-7 text-sm text-gray-600" %>
                     <%= tr.text_field :description, class: "w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" %>
-                
             </div>
                     <%= tr.submit "Enviar peticion", class: "text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg cursor-pointer" %>
                 <% end %>
                 <p class="text-xs text-gray-500 mt-3"><%= pie %></p>
-                
+
                 <% if @typeRequest.errors.any? %>
                 <div id="card border-0">
                     <p class="text-xs text-gray-500 mt-3">Este formulario contiene <%= pluralize(@typeRequest.errors.count, "error") %>:</p>
