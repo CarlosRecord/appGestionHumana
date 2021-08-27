@@ -1,0 +1,2 @@
+class TypePermission < ApplicationRecord
+end
