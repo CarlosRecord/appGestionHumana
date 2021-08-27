@@ -1,0 +1,2 @@
+module DirectedCertificatesHelper
+end
