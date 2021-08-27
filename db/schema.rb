@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_27_143008) do
+ActiveRecord::Schema.define(version: 2021_08_27_154400) do
+
+  create_table "directed_certificates", charset: "utf8mb4", force: :cascade do |t|
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "reason_permissions", charset: "utf8mb4", force: :cascade do |t|
     t.string "description"
