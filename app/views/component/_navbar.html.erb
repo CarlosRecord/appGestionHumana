@@ -33,21 +33,24 @@
           </li>
 
           <li class="dropdown">
-            <%= link_to "Permisos", type_requests_path, class: "bg-gray-200 hover:bg-gray-400 py-2 px-5 block whitespace-no-wrap" %>
-              <ul class="dropdown-content absolute hidden text-gray-700 pl-5 ml-24 -mt-10">
-                <li><%= link_to "Listado", type_requests_path, class: "bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" %></li>
-                <li><%= link_to "agregar", new_type_request_path, class: "bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" %></li>
-              </ul>
-
+            <%= link_to "Certificado", directed_certificates_path, class: "bg-gray-200 hover:bg-gray-400 py-2 px-5 block whitespace-no-wrap" %>
+            <ul class="dropdown-content absolute hidden text-gray-700 pl-6 ml-24 -mt-10">
+              <li class="dropdown">
+                <%= link_to "Solicitudes", directed_certificates_path, class: "bg-gray-200 hover:bg-gray-400 py-2 px-5 block whitespace-no-wrap" %>
+                <ul class="dropdown-content absolute hidden text-gray-700 pl-6 ml-24 -mt-10">
+                  <li><%= link_to "Ver", directed_certificates_path, class: "bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" %></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <%= link_to "Acciones", type_vacations_path, class: "bg-gray-200 hover:bg-gray-400 py-2 px-5 block whitespace-no-wrap" %>
+                <ul class="dropdown-content absolute hidden text-gray-700 pl-6 ml-24 -mt-10">
+                  <li><%= link_to "Listado", directed_certificates_path, class: "bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" %></li>
+                  <li><%= link_to "agregar", new_directed_certificate_path, class: "bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" %></li>
+                </ul>
+              </li>
+            </ul>
           </li>
 
-          <li class="dropdown">
-            <%= link_to "Permisos", type_requests_path, class: "bg-gray-200 hover:bg-gray-400 py-2 px-5 block whitespace-no-wrap" %>
-              <ul class="dropdown-content absolute hidden text-gray-700 pl-5 ml-24 -mt-10">
-                <li><%= link_to "Listado", type_requests_path, class: "bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" %></li>
-                <li><%= link_to "agregar", new_type_request_path, class: "bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" %></li>
-              </ul>
-          </li>
 
           <li><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Option 4</a></li>
         </ul>
