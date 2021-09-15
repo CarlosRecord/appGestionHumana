@@ -10,12 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_11_181523) do
+ActiveRecord::Schema.define(version: 2021_09_15_152828) do
 
   create_table "directed_certificates", charset: "utf8mb4", force: :cascade do |t|
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "holidays", charset: "utf8mb4", force: :cascade do |t|
+    t.date "proposed_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "type_vacation_id", null: false
+    t.index ["type_vacation_id"], name: "index_holidays_on_type_vacation_id"
   end
 
   create_table "permissions", charset: "utf8mb4", force: :cascade do |t|
@@ -54,6 +62,7 @@ ActiveRecord::Schema.define(version: 2021_09_11_181523) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "holidays", "type_vacations"
   add_foreign_key "permissions", "reason_permissions"
   add_foreign_key "permissions", "type_permissions"
 end
