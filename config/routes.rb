@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :reason_permissions
   resources :type_permissions
   resources :directed_certificates
+  resources :holidays
 end
