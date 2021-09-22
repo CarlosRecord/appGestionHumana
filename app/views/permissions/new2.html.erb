@@ -1,0 +1,157 @@
+<section class="text-gray-600 body-font">
+    <div class="container px-5 py-10 mx-auto bg-gray-200 bg-opacity-25">
+        <div class="bg-gradient-to-t from-red-300 to-red-500 rounded-2xl text-white p-8 text-center h-72 max-w-sm md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto shadow-2xl">
+            <h1 class="text-3xl mb-3">Bienvenido</h1>
+            <p class="text-sm md:text-lg">
+                Este formulario esta diseñado con el fin de poder ayudarte con el tramite de tus permisos,
+                el cual llenaras segun tu requerimiento. Cualquier informacion por favor llamar a la extencion 211.
+            </p>
+        </div>
+        <div class="bg-white py-8 px-10 text-center rounded-md shadow-lg transform -translate-y-20 sm:-translate-y-24 max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-5xl mx-auto">
+            <h2 class="font-semibold text-2xl mb-6 text-red-500">Formulario de permisos</h2>        
+                <div class="bg-white shadow rounded-lg p-6 m-2">
+                    <%= form_for :work do |f| %>
+                        <div class="grid lg:grid-cols-1 gap-6 font-bold">
+
+                            <h2 class="text-left italic font-normal text-sm text-gray-400">Campos marcados con asterisco (*) son requeridos.</h2>
+
+                            <div class="border-2 focus-within:border-red-500 focus-within:text-gray-500 transition-all duration-500 relative rounded p-1">
+                                <div class="-mt-4 absolute tracking-wider px-1 uppercase text-xs">
+                                    <p>
+                                        <%= f.label :Cedula , class: "bg-white text-red-400 px-1" %>
+                                    </p>
+                                </div>
+                                <p>    
+                                    <%= f.text_field :Cedula, placeholder: "109876541",class: "py-1 px-1 text-gray-900 outline-none block h-full w-full placeholder-gray-500 placeholder-opacity-25 italic text-base md:text-xl" %>
+                                </p>
+                            </div>
+
+                            <div class="border-t pt-1"></div>
+
+                            <h2 class="text-left font-semibold text-sm md:text-lg mt-4 text-red-500">Datos de contacto</h2>
+
+                            <div class="border-t pt-1"></div>
+
+                            <h2 class="text-left italic font-normal text-sm text-gray-400">Diligencie al menos un dato de contacto.</h2>
+
+                            <div class="border-2 focus-within:border-red-500 focus-within:text-gray-500 transition-all duration-500 relative rounded p-1">
+                                <div class="-mt-4 absolute tracking-wider px-1 uppercase text-xs">
+                                    <p>
+                                        <%= f.label :Nombres, class: "bg-white text-red-400 px-1" %>
+                                    </p>
+                                </div>
+                                <p>    
+                                    <%= f.text_field :Nombres, placeholder: "Fernando Manuel", class: "py-1 px-1 text-gray-900 outline-none block h-full w-full placeholder-gray-500 placeholder-opacity-25 italic text-base md:text-xl" %>
+                                </p>
+                            </div>
+
+                            <div class="border-2 focus-within:border-red-500 focus-within:text-gray-500 transition-all duration-500 relative rounded p-1">
+                                <div class="-mt-4 absolute tracking-wider px-1 uppercase text-xs">
+                                    <p>
+                                        <%= f.label :Apellidos, class: "bg-white text-red-400 px-1" %>
+                                    </p>
+                                </div>
+                                <p>    
+                                    <%= f.text_field :Apellidos, placeholder: "Soto Anaya",class: "py-1 px-1 text-gray-900 outline-none block h-full w-full placeholder-gray-500 placeholder-opacity-25 italic text-base md:text-xl" %>
+                                </p>
+                            </div>
+
+                            <div class="border-2 focus-within:border-red-500 focus-within:text-gray-500 transition-all duration-500 relative rounded p-1">
+                                <div class="-mt-4 absolute tracking-wider px-1 uppercase text-xs">
+                                    <p>
+                                        <%= f.label :Celular, class: "bg-white text-red-400 px-1" %>
+                                    </p>
+                                </div>
+                                <p>    
+                                    <%= f.text_field :Celular, placeholder: "3254567890", class: "py-1 px-1 text-gray-900 outline-none block h-full w-full placeholder-gray-500 placeholder-opacity-25 italic text-base md:text-xl" %>
+                                </p>
+                            </div>
+
+                            <div class="border-t pt-1"></div>
+
+                            <h2 class="text-left font-semibold text-sm md:text-lg mt-4 text-red-500">Datos de envio</h2>
+
+                            <div class="border-t pt-1"></div>
+
+                            <h2 class="text-left italic font-normal text-sm text-gray-400">Diligencie el medio de envío.</h2>
+
+                            <div class="border-2 focus-within:border-red-500 focus-within:text-gray-500 transition-all duration-500 relative rounded p-1">
+                                <div class="-mt-4 absolute tracking-wider px-1 uppercase text-xs">
+                                    <p>
+                                        <%= f.label :Email, class: "bg-white text-red-400 px-1" %>
+                                    </p>
+                                </div>
+                                <p>    
+                                    <%= f.email_field :Email, placeholder: "micorreo@email.com", class: "py-1 px-1 text-gray-900 outline-none block h-full w-full placeholder-gray-500 placeholder-opacity-25 italic text-base md:text-xl" %>
+                                </p>
+                            </div>
+
+                            <div class="border-t pt-1"></div>
+
+                            <h2 class="text-left font-semibold text-sm md:text-lg mt-4 text-red-500">Diligencie las fechas de su permiso</h2>
+
+                            <div class="border-t pt-1"></div>
+
+                            <h2 class="text-left italic font-normal text-sm text-gray-400">Teniendo en cuanta su necesidad, seleccione las fechas de su permiso. Tanto la fecha incial como la fecha final.</h2>
+
+                            <div class="grid lg:grid-cols-2 gap-6">
+                                <%= f.label :FechaInicio, class: "bg-white text-red-400 px-1" %>
+                                <%= f.datetime_field :fechaInicio, class: "filter drop-shadow-lg shadow-inner rounded text-red-400 cursor-pointer border border-gray-300 h-10 pl-5 pr-10 hover:border-gray-400 focus:outline-none" %>
+                                <%= f.label :FechaFinal, class: "bg-white text-red-400 px-1" %>
+                                <%= f.datetime_field :fechaFinal, class: "filter drop-shadow-lg shadow-inner rounded text-red-400 cursor-pointer border border-gray-300 h-10 pl-5 pr-10 hover:border-gray-400 focus:outline-none" %>
+                            </div>
+
+                            <div class="border-t mt-6 pt-3"></div>
+                            <h2 class="text-left italic font-normal text-sm text-gray-400">Teniendo en cuenta su necesidad, por favor escriba su propuesta para reponer el tiempo.</h2>    
+                            
+                            <div class="border-2 focus-within:border-red-500 focus-within:text-gray-500 transition-all duration-500 relative rounded p-1">
+                                <div class="-mt-4 absolute tracking-wider px-1 uppercase text-xs">
+                                    <p>
+                                        <%= f.label :PropuestaHoroas, class: "bg-white text-red-400 px-1" %>
+                                    </p>
+                                </div>
+                                <p>    
+                                    <%= f.text_area :PropuestaHoroas, placeholder: "Descripcion de propuesta para reponer el tiempo...", class: "py-1 px-1 text-gray-900 outline-none block h-full w-full placeholder-gray-500 placeholder-opacity-25 italic text-base md:text-xl" %>
+                                </p>
+                            </div>
+
+                            <div class="border-t pt-1"></div>
+
+                            <div class="grid md:grid-cols-1 gap 6">
+
+                                <h2 class="text-left font-semibold text-sm md:text-lg mt-4 text-red-500">Diligencie tipo de permiso.</h2>
+
+                                <div class="border-t pt-1"></div>
+
+                                <h2 class="text-left italic font-normal text-sm text-gray-400">Teniendo en cuenta su necesidad, seleccione las especificaciones con las cuales requiere su permiso.</h2>
+
+                                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-red-400">
+                                    <%= select_tag(:permissions_id, options_for_select([['Planificado', 1], ['Extraordinario', 2], ['Empresa', 3]]), class: "filter drop-shadow-lg shadow-inner rounded text-red-400 cursor-pointer border border-gray-300 h-10 pl-5 pr-10 hover:border-gray-400 focus:outline-none") %>
+                                </div>
+
+                                <h2 class="text-left font-semibold text-sm md:text-lg mt-4 text-red-500">Diligencie motivo de permiso.</h2>
+
+                                <div class="border-t pt-1"></div>
+
+                                <h2 class="text-left italic font-normal text-sm text-gray-400">Teniendo en cuenta su necesidad, seleccione las especificaciones con las cuales requiere su permiso.</h2>
+
+                                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-red-400">
+                                    <%= select_tag(:permissions_id, options_for_select([['Cita medica', 1], ['Personal', 2], ['Familiar', 3], ['Dia familia', 4]]), class: "filter drop-shadow-lg shadow-inner rounded text-red-400 cursor-pointer border border-gray-300 h-10 pl-5 pr-10 hover:border-gray-400 focus:outline-none") %>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="border-t mt-6 pt-3">
+                            <p>
+                                <%= f.submit "Enviar peticion", class:"rounded text-gray-100 px-3 py-1 bg-red-500 hover:shadow-inner hover:bg-red-700 transition-all duration-300 cursor-pointer" %>
+                            </p>
+                        </div>
+                    <% end %>
+                </div>    
+            </div>
+
+        </div>            
+    </div>  
+</section>
