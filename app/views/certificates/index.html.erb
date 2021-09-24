@@ -1,0 +1,31 @@
+<section class="text-gray-600 body-font bg-gray-200 bg-opacity-75 pb-40">
+  <div class="p-6 flex">
+    <h1 class="text-3xl">
+      Listado de certificados laborales
+    </h1>
+  </div>
+  <div class="px-3 py-4 flex justify-center">
+    <table class="w-9/12 text-md bg-white shadow-md rounded mb-4 table-auto">
+      <tbody>
+        <tr class="border-b">
+          <th class="text-center p-3 px-5">Direccion de envio</th>
+          <th class="text-center p-3 px-5">Dirigido</th>
+          <th class="text-center p-3 px-5">con tipo contrato</th>
+          <th class="text-center p-3 px-5">con salario</th>
+          <th class="text-center p-3 px-5">con funciones</th>
+          <th class="text-center p-3 px-5">con tiempo</th>
+        </tr>
+        <% @certificates.each do |certificate| %>
+          <tr class="border-b hover:bg-orange-100 bg-gray-100">
+            <td class="p-3 px-5"><%= certificate.addressee %></td>
+            <td class="p-3 px-5"><%= certificate.directed_certificate.description %></td>
+            <td class="p-3 px-5"><%= certificate.type_contract %></td>
+            <td class="p-3 px-5"><%= certificate.salary %></td>
+            <td class="p-3 px-5"><%= certificate.funtions %></td>
+            <td class="p-3 px-5"><%= certificate.time_working %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
