@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_15_183231) do
+ActiveRecord::Schema.define(version: 2021_09_27_160501) do
 
   create_table "certificates", charset: "utf8mb4", force: :cascade do |t|
     t.string "addressee"
@@ -70,6 +70,16 @@ ActiveRecord::Schema.define(version: 2021_09_15_183231) do
 
   create_table "type_vacations", charset: "utf8mb4", force: :cascade do |t|
     t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", charset: "utf8mb4", force: :cascade do |t|
+    t.integer "cedula"
+    t.string "name"
+    t.string "last_name"
+    t.string "email"
+    t.bigint "cell_phone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

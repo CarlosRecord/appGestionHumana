@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'user/index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'home#index'
 
@@ -6,6 +7,7 @@ Rails.application.routes.draw do
   get 'vacation/new'
   get '/works/new'
 
+  resources :users
   resources :type_vacations
   resources :type_requests
   resources :reason_permissions

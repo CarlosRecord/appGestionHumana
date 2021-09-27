@@ -1,7 +1,7 @@
 <section class="text-gray-600 body-font bg-gray-200 bg-opacity-75 pb-40">
   <div class="p-6 flex">
     <h1 class="text-3xl">
-      Listado de Vacacciones
+      Listado de Vacaciones
     </h1>
   </div>
   <div class="px-3 py-4 flex justify-center">
@@ -10,11 +10,13 @@
         <tr class="border-b">
           <th class="text-center p-3 px-5">Fecha propuesta</th>
           <th class="text-center p-3 px-5">Tipo de vacacion</th>
+          <th class="text-center p-3 px-5">Fecha de la solicitud</th>
         </tr>
         <% @holidays.each do |holiday| %>
           <tr class="border-b hover:bg-orange-100 bg-gray-100">
-            <td class="p-3 px-5"><%= holiday.proposed_date %></td>
+            <td class="p-3 px-5"><%= holiday.proposed_date.strftime("%d de %B de %Y") %></td>
             <td class="p-3 px-5"><%= holiday.type_vacation.description %></td>
+            <td class="p-3 px-5"><%= time_ago_in_words(holiday.created_at) %></td>
           </tr>
         <% end %>
       </tbody>

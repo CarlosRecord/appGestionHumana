@@ -1,0 +1,29 @@
+<section class="text-gray-600 body-font bg-gray-200 bg-opacity-75 pb-40">
+  <div class="p-6 flex">
+    <h1 class="text-3xl">
+      Listado de Usuarios
+    </h1>
+  </div>
+  <div class="px-3 py-4 flex justify-center">
+    <table class="w-9/12 text-md bg-white shadow-md rounded mb-4 table-auto">
+      <tbody>
+        <tr class="border-b">
+          <th class="text-center p-3 px-5">Cedula</th>
+          <th class="text-center p-3 px-5">Nombres</th>
+          <th class="text-center p-3 px-5">Apellidos</th>
+          <th class="text-center p-3 px-5">Celular</th>
+          <th class="text-center p-3 px-5">Email</th>
+        </tr>
+        <% @users.each do |user| %>
+          <tr class="border-b hover:bg-orange-100 bg-gray-100">
+            <td class="p-3 px-5"><%= user.cedula %></td>
+            <td class="p-3 px-5"><%= user.name %></td>
+            <td class="p-3 px-5"><%= user.last_name %></td>
+            <td class="p-3 px-5"><%= user.cell_phone %></td>
+            <td class="p-3 px-5"><%= user.email %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>

@@ -5,7 +5,7 @@
     </h1>
   </div>
   <div class="px-3 py-4 flex justify-center">
-    <table class="w-9/12 text-md bg-white shadow-md rounded mb-4 table-auto">
+    <table class="w-12/12 text-md bg-white shadow-md rounded mb-4 table-auto">
       <tbody>
         <tr class="border-b">
           <th class="text-center p-3 px-5">Fecha Inicial</th>
@@ -13,14 +13,16 @@
           <th class="text-center p-3 px-5">Propuesta</th>
           <th class="text-center p-3 px-5">Tipo de Permiso</th>
           <th class="text-center p-3 px-5">Motivo del Permiso</th>
+          <th class="text-center p-3 px-5">Fecha de la solicitud</th>
         </tr>
         <% @permissions.each do |permission| %>
           <tr class="border-b hover:bg-orange-100 bg-gray-100">
-            <td class="p-3 px-5"><%= permission.start_date %></td>
-            <td class="p-3 px-5"><%= permission.end_date %></td>
+            <td class="p-3 px-5"><%= permission.start_date.strftime("%d de %B de %Y") %></td>
+            <td class="p-3 px-5"><%= permission.end_date.strftime("%d de %B de %Y") %></td>
             <td class="p-3 px-5"><%= permission.proposal %></td>
             <td class="p-3 px-5"><%= permission.type_permission.description %></td>
             <td class="p-3 px-5"><%= permission.reason_permission.description %></td>
+            <td class="p-3 px-5"><%= time_ago_in_words(permission.created_at) %></td>
           </tr>
         <% end %>
       </tbody>

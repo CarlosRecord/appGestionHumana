@@ -1,0 +1,42 @@
+<section class="text-gray-600 body-font bg-gray-200 bg-opacity-75 pb-10">
+  <div class="container px-10 py-20 mx-auto flex flex-wrap items-center">
+
+    <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
+        <h1 class="title-font font-medium text-3xl text-gray-900"><%= title %></h1>
+        <p class="leading-relaxed mt-4"><%= paragraph %></p>
+    </div>
+
+    <div class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 shadow rounded-lg">
+      <h2 class="text-gray-900 text-lg font-medium title-font mb-5"><%= title %></h2>
+
+      <div class="relative mb-4">
+        <%= form_with model: @user do |u| %>
+          <%= u.label :cedula, class: "leading-7 text-sm text-gray-600" %>
+          <%= u.text_field :cedula, class: "w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out cursor-auto" %>
+          <%= u.label :name, class: "leading-7 text-sm text-gray-600" %>
+          <%= u.text_field :name, class: "w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out cursor-auto" %>
+          <%= u.label :last_name, class: "leading-7 text-sm text-gray-600" %>
+          <%= u.text_field :last_name, class: "w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out cursor-auto" %>
+          <%= u.label :cell_phone, class: "leading-7 text-sm text-gray-600" %>
+          <%= u.text_field :cell_phone, class: "w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out cursor-auto" %>
+          <%= u.label :email, class: "leading-7 text-sm text-gray-600" %>
+          <%= u.text_field :email, class: "w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out cursor-auto" %>
+      </div>
+          <%= u.submit "Enviar peticion", class: "text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg cursor-pointer" %>
+        <% end %>
+      <p class="text-xs text-gray-500 mt-3"><%= pie %></p>
+
+      <% if @user.errors.any? %>
+        <div id="card border-0">
+          <p class="text-xs text-gray-500 mt-3">Este formulario contiene <%= pluralize(@user.errors.count, "error") %>:</p>
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li class="text-red-500"><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</section>

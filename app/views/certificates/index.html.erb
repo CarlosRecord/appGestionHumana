@@ -5,7 +5,7 @@
     </h1>
   </div>
   <div class="px-3 py-4 flex justify-center">
-    <table class="w-9/12 text-md bg-white shadow-md rounded mb-4 table-auto">
+    <table class="w-12/12 text-md bg-white shadow-md rounded mb-4 table-auto">
       <tbody>
         <tr class="border-b">
           <th class="text-center p-3 px-5">Direccion de envio</th>
@@ -14,6 +14,7 @@
           <th class="text-center p-3 px-5">con salario</th>
           <th class="text-center p-3 px-5">con funciones</th>
           <th class="text-center p-3 px-5">con tiempo</th>
+          <th class="text-center p-3 px-5">Fecha de la solicitud</th>
         </tr>
         <% @certificates.each do |certificate| %>
           <tr class="border-b hover:bg-orange-100 bg-gray-100">
@@ -23,6 +24,7 @@
             <td class="p-3 px-5"><%= certificate.salary %></td>
             <td class="p-3 px-5"><%= certificate.funtions %></td>
             <td class="p-3 px-5"><%= certificate.time_working %></td>
+            <td class="p-3 px-5"><%= time_ago_in_words(certificate.created_at) %></td>
           </tr>
         <% end %>
       </tbody>
