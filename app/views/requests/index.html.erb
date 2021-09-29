@@ -1,0 +1,31 @@
+<section class="text-gray-600 body-font bg-gray-200 bg-opacity-75 pb-40">
+  <div class="p-6 flex">
+    <h1 class="text-3xl">
+      Listado de peticiones
+    </h1>
+  </div>
+  <div class="px-3 py-4 flex justify-center">
+    <table class="w-9/12 text-md bg-white shadow-md rounded mb-4 table-auto">
+      <tbody>
+        <tr class="border-b">
+          <th class="text-center p-3 px-5">Nombre del solicitante</th>
+          <th class="text-center p-3 px-5">Tipo de solicitud</th>
+          <th class="text-center p-3 px-5">fecha de la solicitud</th>
+          <th class="text-center p-3 px-5">Autorizacion Gistion Humana</th>
+          <th class="text-center p-3 px-5">Autorizacion Director de Area</th>
+          <th class="text-center p-3 px-5">Tiempo de la solicitud</th>
+        </tr>
+        <% @requests.each do |request| %>
+          <tr class="border-b hover:bg-orange-100 bg-gray-100">
+            <td class="p-3 px-5"><%= request.user.name %></td>
+            <td class="p-3 px-5"><%= request.type_request.description %></td>
+            <td class="p-3 px-5"><%= request.request_date %></td>
+            <td class="p-3 px-5"><%= request.authorization_gh %></td>
+            <td class="p-3 px-5"><%= request.authorization_dir %></td>
+            <td class="p-3 px-5"><%= time_ago_in_words(request.created_at) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>

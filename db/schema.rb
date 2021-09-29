@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_27_160501) do
+ActiveRecord::Schema.define(version: 2021_09_28_193240) do
 
   create_table "certificates", charset: "utf8mb4", force: :cascade do |t|
     t.string "addressee"
@@ -21,7 +21,9 @@ ActiveRecord::Schema.define(version: 2021_09_27_160501) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "directed_certificate_id", null: false
+    t.bigint "request_id", null: false
     t.index ["directed_certificate_id"], name: "index_certificates_on_directed_certificate_id"
+    t.index ["request_id"], name: "index_certificates_on_request_id"
   end
 
   create_table "directed_certificates", charset: "utf8mb4", force: :cascade do |t|
@@ -35,6 +37,8 @@ ActiveRecord::Schema.define(version: 2021_09_27_160501) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "type_vacation_id", null: false
+    t.bigint "request_id", null: false
+    t.index ["request_id"], name: "index_holidays_on_request_id"
     t.index ["type_vacation_id"], name: "index_holidays_on_type_vacation_id"
   end
 
@@ -46,7 +50,9 @@ ActiveRecord::Schema.define(version: 2021_09_27_160501) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "type_permission_id", null: false
     t.bigint "reason_permission_id", null: false
+    t.bigint "request_id", null: false
     t.index ["reason_permission_id"], name: "index_permissions_on_reason_permission_id"
+    t.index ["request_id"], name: "index_permissions_on_request_id"
     t.index ["type_permission_id"], name: "index_permissions_on_type_permission_id"
   end
 
@@ -54,6 +60,18 @@ ActiveRecord::Schema.define(version: 2021_09_27_160501) do
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "requests", charset: "utf8mb4", force: :cascade do |t|
+    t.date "request_date"
+    t.boolean "authorization_gh"
+    t.boolean "authorization_dir"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.bigint "type_request_id", null: false
+    t.index ["type_request_id"], name: "index_requests_on_type_request_id"
+    t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
   create_table "type_permissions", charset: "utf8mb4", force: :cascade do |t|
@@ -85,7 +103,12 @@ ActiveRecord::Schema.define(version: 2021_09_27_160501) do
   end
 
   add_foreign_key "certificates", "directed_certificates"
+  add_foreign_key "certificates", "requests"
+  add_foreign_key "holidays", "requests"
   add_foreign_key "holidays", "type_vacations"
   add_foreign_key "permissions", "reason_permissions"
+  add_foreign_key "permissions", "requests"
   add_foreign_key "permissions", "type_permissions"
+  add_foreign_key "requests", "type_requests"
+  add_foreign_key "requests", "users"
 end

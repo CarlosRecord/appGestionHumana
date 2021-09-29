@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   resources :permissions
   resources :holidays
   resources :certificates
+  resources :requests
 end
